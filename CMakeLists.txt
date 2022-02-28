@@ -11,11 +11,11 @@ pico_sdk_init()
 
 # Add sources to executable
 add_executable(rp2040_light_sensor
-    hello_world.c
+    src/main.c
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(rp2040-light-sensor pico_stdlib)
+target_link_libraries(rp2040_light_sensor pico_stdlib)
 
 # Create map/bin/hex/uf2 file in addition to elf
 pico_add_extra_outputs(rp2040_light_sensor)
