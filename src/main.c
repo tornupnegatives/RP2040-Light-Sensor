@@ -14,7 +14,7 @@ int main() {
     rtc_init();
 
     /* User initializers */
-    alarm_init();
+    led_alarm_init();
     led_init();
 
     /* User variables */
@@ -25,7 +25,7 @@ int main() {
 
     while(true) {
 
-        if (alarm_fired()) {
+        if (led_alarm_fired()) {
             led_on();
             sleep_ms(100);
             led_off();

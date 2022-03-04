@@ -25,7 +25,7 @@ void led_alarm_callback(void);
  *              will fire 30 seconds past the top of each
  *              each minute
  */
-void alarm_init() {
+void led_alarm_init() {
     /* Set current time to Wednesday 13th January 2021 11:20:00 */
     datetime_t t = {
         .year  = 2020,
@@ -57,7 +57,7 @@ void alarm_init() {
 /*!
  * \brief   Did the LED alarm just fire?
  */
-bool alarm_fired() {
+bool led_alarm_fired() {
     if (_alarm_fired) {
         _alarm_fired = false;
         return true;

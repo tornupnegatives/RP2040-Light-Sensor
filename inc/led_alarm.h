@@ -1,7 +1,7 @@
 #ifndef LED_ALARM_H__
 #define LED_ALARM_H__
 
-void alarm_init();
-bool alarm_fired();
+void led_alarm_init();
+bool led_alarm_fired();
 
 #endif
