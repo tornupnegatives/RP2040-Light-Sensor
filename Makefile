@@ -9,6 +9,9 @@
 #
 ##############################################################################
 
+all: build
+.PHONY: all
+
 # Fetch current version of Raspberry Pi Pico SDK and initialize submodules
 update-sdk: 
 	git submodule sync
