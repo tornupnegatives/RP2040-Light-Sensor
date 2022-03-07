@@ -10,13 +10,8 @@
 #include "hardware/rtc.h"
 #include "pico/util/datetime.h"
 
-/* Private variables */
-volatile bool _alarm_fired;
-
-/* Private prototypes */
+volatile bool alarm_fired;
 void led_alarm_callback(void);
-
-/* Public interface */
 
 /*!
  * \brief       Set the current date and time and set the LED alarm
@@ -51,26 +46,24 @@ void led_alarm_init() {
     };
 
     rtc_set_alarm(&alarm, &led_alarm_callback);
-    _alarm_fired = false;
+    alarm_fired = false;
 }
 
 /*!
  * \brief   Did the LED alarm just fire?
  */
 bool led_alarm_fired() {
-    if (_alarm_fired) {
-        _alarm_fired = false;
+    if (alarm_fired) {
+        alarm_fired = false;
         return true;
     }
 
     return false;
 }
 
-/* Private interface */
-
 /*!
  * \brief   On alarm interrupt, indicate that it has fired
  */
 void led_alarm_callback(void) {
-    _alarm_fired = true;
+    alarm_fired = true;
 }

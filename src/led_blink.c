@@ -1,5 +1,6 @@
 /*!
  *  \file       led_blink.c
+ *
  *  \brief      Toggle the LED
  * 
  *  \details    The functionality provided by this file should by all means
@@ -13,7 +14,7 @@
 #include "pico/stdlib.h"
 #include "led_blink.h"
 
-const uint8_t LED_PIN = PICO_DEFAULT_LED_PIN;
+#define LED_PIN PICO_DEFAULT_LED_PIN
 
 /*!
  * \brief   Set the LED pin as a GPIO output

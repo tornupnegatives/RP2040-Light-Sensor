@@ -1,7 +1,10 @@
 /*!
  *  \file      command.c
+ *
  *  \brief     Basis of the command-line interface
+ * 
  *  \details   Provides functions for parsing and executing commands over USB serial/UART
+ * 
  *  \author    Joseph Bellahcen <joe@josephbellahcen.com>
  */
 
@@ -10,7 +13,9 @@
 
 /*!
  * \brief       Scan the console for user input without blocking
+ *
  * \param[out]  buff: Buffer into which to store command
+ * 
  * \param[in]   buff_size: Size of the buffer
  */
 int command_scan(uint8_t* buff, uint8_t buff_size) {

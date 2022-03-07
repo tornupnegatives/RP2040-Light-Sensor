@@ -23,7 +23,7 @@ add_executable(rp2040_light_sensor
 )
 
 # Enable warnings
-#target_compile_options(rp2040_light_sensor PUBLIC -Werror -Wall -Wextra)
+target_compile_options(rp2040_light_sensor PUBLIC -Wall -Wextra)
 
 # Executable metadata
 pico_set_program_name(rp2040_light_sensor "rp2040_light_sensor")
@@ -35,7 +35,7 @@ pico_set_program_version(rp2040_light_sensor "0.1")
 pico_set_float_implementation(rp2040_light_sensor pico)
 
 # Enable double support
-#pico_set_double_implementation(rp2040_light_sensor pico)
+pico_set_double_implementation(rp2040_light_sensor pico)
 
 # Redirect IO
 pico_enable_stdio_usb(rp2040_light_sensor 1)
