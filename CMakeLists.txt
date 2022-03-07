@@ -18,11 +18,12 @@ add_executable(rp2040_light_sensor
         src/main.c
         src/led_alarm.c
         src/led_blink.c
+        src/tsl237.c
         src/command.c
 )
 
 # Enable warnings
-target_compile_options(rp2040_light_sensor PUBLIC -Werror -Wall -Wextra)
+#target_compile_options(rp2040_light_sensor PUBLIC -Werror -Wall -Wextra)
 
 # Executable metadata
 pico_set_program_name(rp2040_light_sensor "rp2040_light_sensor")
@@ -31,7 +32,7 @@ pico_set_program_version(rp2040_light_sensor "0.1")
 #pico_set_program_url(foo "www.plinth.com/foo")
 
 # Enable floating point support
-#pico_set_float_implementation(rp2040_light_sensor pico)
+pico_set_float_implementation(rp2040_light_sensor pico)
 
 # Enable double support
 #pico_set_double_implementation(rp2040_light_sensor pico)
@@ -44,6 +45,8 @@ pico_enable_stdio_usb(rp2040_light_sensor 1)
 target_link_libraries(rp2040_light_sensor 
         pico_stdlib
         hardware_rtc
+        hardware_gpio
+        hardware_timer
 )
 
 # Create map/bin/hex/uf2 file in addition to elf
